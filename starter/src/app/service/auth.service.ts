@@ -30,4 +30,8 @@ export class AuthService {
     localStorage.setItem('email', loginResponse.email);
     localStorage.setItem('role', loginResponse.role);
   }
+
+  getToken(): string {
+    return localStorage.getItem('token');
+  }
 }
