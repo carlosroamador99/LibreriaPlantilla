@@ -27,10 +27,10 @@ export class SigninComponent implements OnInit {
     this.authService.login(loginDto).subscribe(loginResp => {
       console.log(loginResp);
       this.authService.setLoginData(loginResp);
+      this.router.navigate(['dashboard']);
     }, error => {
-  console.log('Error en petición de login');
-  console.log(error);
-    }
-    );
+      console.log('Error en petición de login');
+      console.log(error);
+    });
   }
-  }
+}
