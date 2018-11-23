@@ -4,7 +4,8 @@ import { AdminLayoutComponent, AuthLayoutComponent } from './core';
 
 export const AppRoutes: Routes = [
   {path:'',
-  redirectTo:'/session/login', pathMatch:'full'},
+  redirectTo:'/session/login',
+  pathMatch:'full'},
   {
   path: '',
   component: AdminLayoutComponent,

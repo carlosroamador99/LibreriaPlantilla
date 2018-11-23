@@ -23,7 +23,7 @@ export class OptionsComponent {
   constructor(
     public translate: TranslateService) {
     const browserLang: string = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|es/) ? browserLang : 'es');
+    translate.use(browserLang.match(/en|fr/) ? browserLang : 'en');
   }
 
   sendOptions() {
