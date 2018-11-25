@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { RecursosService } from 'src/app/service/recursos.service';
 import { ResourceResponse } from 'src/app/interfaces/resource-response.interface';
 import { Title } from '@angular/platform-browser';
+import { MatDialog } from '@angular/material';
+
+import { DataTransferService } from 'src/app/service/data-transfer.service';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-list-resource',
@@ -11,8 +15,8 @@ import { Title } from '@angular/platform-browser';
 export class ListResourceComponent implements OnInit {
   rows=[];
   dataSource: ResourceResponse[];
-
-  constructor(private recursoService:RecursosService, private titleService: Title) { }
+  constructor(private recursoService:RecursosService, private titleService: Title, private dialog: MatDialog,
+     private data: DataTransferService) { }
 
   ngOnInit() {
     this.getResources();
@@ -27,5 +31,15 @@ export class ListResourceComponent implements OnInit {
     });
   }
 
+  openDialogEdit(id: string){
+    console.log(id);
+    this.data.changeId(id);
+    const dialogEdit = this.dialog.open(DialogComponent);
+    
+  dialogEdit.afterClosed().subscribe(result =>{
+    this.getResources();
+    console.log(result);
+  });
+  }
 
 }

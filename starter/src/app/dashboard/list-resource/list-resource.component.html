@@ -1,12 +1,14 @@
-<ngx-datatable
+<ngx-datatable 
   class="material"
   [rows]="dataSource"
   [columnMode]="'force'"
   [headerHeight]="50"
   [footerHeight]="50"
   [rowHeight]="'auto'"
-  [limit]="10">
-  <ngx-datatable-column name="Id" prop="id"></ngx-datatable-column>
+  [limit]="10"
+  [selectionType]="'multiClick'"
+  (select)="openDialogEdit(id)">
+  <ngx-datatable-column name="Id" prop="id" ></ngx-datatable-column>
   <ngx-datatable-column name="Titulo" prop="title"></ngx-datatable-column>
   <ngx-datatable-column name="Autor" prop="autor"></ngx-datatable-column>
   <ngx-datatable-column name="Año" prop="anyo"></ngx-datatable-column>

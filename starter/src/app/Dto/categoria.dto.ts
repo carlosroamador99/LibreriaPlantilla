@@ -1,8 +1,8 @@
 export class CategoriaDto {
-    id: string;
+    id: number;
     name: string;
 
-    constructor(i: string, n: string){
+    constructor(i: number, n: string){
         this.id = i;
         this.name = n;
     }
