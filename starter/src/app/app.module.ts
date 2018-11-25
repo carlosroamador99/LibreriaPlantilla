@@ -49,6 +49,7 @@ import { AppRoutes } from './app.routing';
 import { AppComponent } from './app.component';
 
 
+
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }

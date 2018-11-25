@@ -6,8 +6,9 @@
   [footerHeight]="50"
   [rowHeight]="'auto'"
   [limit]="10"
-  [selectionType]="'multiClick'"
-  (select)="openDialogEdit(id)">
+  [selected]="selected"
+  [selectionType]="'single'"
+  (select)='onSelect($event)'>
   <ngx-datatable-column name="Id" prop="id" ></ngx-datatable-column>
   <ngx-datatable-column name="Titulo" prop="title"></ngx-datatable-column>
   <ngx-datatable-column name="Autor" prop="autor"></ngx-datatable-column>
@@ -15,3 +16,8 @@
   <ngx-datatable-column name="Tipo" prop="type.name"></ngx-datatable-column>
   <ngx-datatable-column name="Categoría" prop="category.name"></ngx-datatable-column>
 </ngx-datatable>
+<div style="padding-left: 1vw;">
+  <button mat-mini-fab color="primary" (click)="openDialogNewResource()">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

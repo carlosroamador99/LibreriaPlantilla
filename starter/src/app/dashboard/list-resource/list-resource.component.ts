@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material';
 
 import { DataTransferService } from 'src/app/service/data-transfer.service';
 import { DialogComponent } from '../dialog/dialog.component';
+import { DialogNewResourceComponent } from 'src/app/dashboard/dialog-new-resource/dialog-new-resource.component';
 
 @Component({
   selector: 'app-list-resource',
@@ -15,6 +16,8 @@ import { DialogComponent } from '../dialog/dialog.component';
 export class ListResourceComponent implements OnInit {
   rows=[];
   dataSource: ResourceResponse[];
+  selected = [];
+
   constructor(private recursoService:RecursosService, private titleService: Title, private dialog: MatDialog,
      private data: DataTransferService) { }
 
@@ -31,9 +34,9 @@ export class ListResourceComponent implements OnInit {
     });
   }
 
-  openDialogEdit(id: string){
+  openDialogEdit(id: number){
     console.log(id);
-    this.data.changeId(id);
+    this.data.changeId(String(id));
     const dialogEdit = this.dialog.open(DialogComponent);
     
   dialogEdit.afterClosed().subscribe(result =>{
@@ -41,5 +44,16 @@ export class ListResourceComponent implements OnInit {
     console.log(result);
   });
   }
+  openDialogNewResource() {
+    const dialogoNewProduct = this.dialog.open(DialogNewResourceComponent);
 
+    dialogoNewProduct.afterClosed().subscribe(result => {
+      this.getResources();
+      console.log(result);
+    });
+
+  }
+  onSelect({ selected }) {
+    this.openDialogEdit(selected[0].id);
+}
 }

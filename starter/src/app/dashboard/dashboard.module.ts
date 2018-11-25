@@ -5,12 +5,15 @@ import { MatIconModule, MatCardModule, MatButtonModule, MatListModule, MatProgre
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import {MatDialogModule} from '@angular/material/dialog';
+import {MatSelectModule} from '@angular/material/select';
+
 import { FormsModule } from '@angular/forms';
-import {MatFormFieldModule} from '@angular/material/form-field';
+import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import { DashboardComponent } from './dashboard.component';
 import { DashboardRoutes } from './dashboard.routing';
 import { ListResourceComponent } from './list-resource/list-resource.component';
 import { DialogComponent } from './dialog/dialog.component';
+import { DialogNewResourceComponent } from './dialog-new-resource/dialog-new-resource.component';
 
 @NgModule({
   imports: [
@@ -27,10 +30,12 @@ import { DialogComponent } from './dialog/dialog.component';
     MatDialogModule,
     FormsModule,
     MatFormFieldModule,
+    MatSelectModule,
+    MatInputModule
     
   ],
-  declarations: [ DashboardComponent, ListResourceComponent, DialogComponent ],
-  entryComponents:[DialogComponent]
+  declarations: [ DashboardComponent, ListResourceComponent, DialogComponent, DialogNewResourceComponent ],
+  entryComponents:[DialogComponent, DialogNewResourceComponent]
 })
 
 export class DashboardModule {}
