@@ -37,6 +37,7 @@ export class RecursosService {
 
     return this.http.post(`${proUrl}/create`, dto, requestOptions);
   }
+
   edit(dto: ProductDto, id: number) {
     const requestOptions = {
       headers: new HttpHeaders({
@@ -46,7 +47,20 @@ export class RecursosService {
     };
     return this.http.put(`${proUrl}/edit/${id}`, dto, requestOptions);
   }
-}
+
+  deleteResource(id: number) {
+    const requestOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.authService.getToken()}`,
+        'Access-Control-Allow-Origin': '*'
+      })
+    };
+
+    return this.http.delete(`${proUrl}/${id}`, requestOptions);
+  }
+  }
+
 
 
 

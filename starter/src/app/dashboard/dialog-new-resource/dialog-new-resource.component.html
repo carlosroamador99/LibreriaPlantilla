@@ -23,14 +23,15 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-
+ 
   <mat-form-field>
       <mat-select placeholder="Categoria" [(ngModel)]="categoryId" name="categoryId">
         <mat-option *ngFor="let category of categoria" [value]="category.id">
           {{category.name}}
         </mat-option>
       </mat-select>
-    </mat-form-field><b>
+    </mat-form-field>
 
-  <button mat-raised-button color="primary" (click)="addProduct()">Crear</button>
+  <button disabled *ngIf="!validateAnyo()" mat-raised-button color="primary">Crear</button>
+  <button mat-raised-button color="primary" *ngIf="validateAnyo()" (click)="addProduct()">Crear</button>
 

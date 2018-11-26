@@ -8,6 +8,7 @@ import { ResourceResponse } from 'src/app/interfaces/resource-response.interface
 import { TipoService } from 'src/app/service/tipo.service';
 import { CategoriasService } from 'src/app/service/categorias.service';
 import { ProductDto } from 'src/app/Dto/resource.dto';
+import { stringify } from '@angular/core/src/util';
 
 
 @Component({
@@ -69,7 +70,7 @@ export class DialogComponent implements OnInit {
       console.log(error);
     });
   }
-  editProduct() {
+  editResource() {
     const dto = new ProductDto(this.title, this.autor, this.anyo, this.content, this.categoryId, this.typeId);
     this.recService.edit(dto, this.id).subscribe(result => {
       console.log(result);
@@ -78,5 +79,23 @@ export class DialogComponent implements OnInit {
       console.log(error);
     });
   }
+
+  borrar(){
+    this.recService.deleteResource(this.id).subscribe(recurso =>{
+      this.getAllResources();
+      this.dialogRef.close(); 
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  validatAnyo(): boolean {
+    // tslint:disable-next-line:max-line-length
+    const anyoRegExpr = new RegExp('/[^a-z ]\*([.0-9])*\d');
+    console.log(`Anyo: ${anyoRegExpr.test(String(this.anyo))}`);
+    return anyoRegExpr.test(String(this.anyo));
+  }
+
+
   }
 

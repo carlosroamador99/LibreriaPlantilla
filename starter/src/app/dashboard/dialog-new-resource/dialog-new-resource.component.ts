@@ -19,7 +19,7 @@ export class DialogNewResourceComponent implements OnInit {
   anyo: number;
   content: string;
   categoryId: number;
-  TypeId: number;
+  typeId: number;
   categoria: CategoriaDto[];
   tipos: TipoDto[];
   constructor(private catService: CategoriasService, private tipService: TipoService,
@@ -38,14 +38,20 @@ export class DialogNewResourceComponent implements OnInit {
     });
   }
   addProduct() {
-    const dto = new ProductDto(this.title, this.autor, this.anyo, this.content, this.categoryId, this.TypeId);
+    const dto = new ProductDto(this.title, this.autor, this.anyo, this.content, this.categoryId, this.typeId);
 
     this.prodService.newP(dto).subscribe(result => {
-      console.log(result);
+      console.log(this.typeId);
       this.dialogRef.close();
     }, error => {
       console.log(error);
     });
+  }
 
+  validateAnyo(): boolean {
+    const anyoRegExpr = new RegExp('^[0-9]{0,}$');
+    console.log(this.anyo);
+    console.log(`Anyo: ${anyoRegExpr.test(String(this.anyo))}`);
+    return anyoRegExpr.test(String(this.anyo));
   }
 }

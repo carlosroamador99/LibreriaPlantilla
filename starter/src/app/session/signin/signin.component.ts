@@ -33,4 +33,10 @@ export class SigninComponent implements OnInit {
       console.log(error);
     });
   }
+  validateEmail(): boolean {
+    // tslint:disable-next-line:max-line-length
+    const emailRegExpr = new RegExp('\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*');
+    console.log(`Email: ${emailRegExpr.test(this.email)}`);
+    return emailRegExpr.test(this.email);
+  }
 }
