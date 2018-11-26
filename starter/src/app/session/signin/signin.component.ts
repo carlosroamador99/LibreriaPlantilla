@@ -34,8 +34,8 @@ export class SigninComponent implements OnInit {
     });
   }
   validateEmail(): boolean {
-    // tslint:disable-next-line:max-line-length
-    const emailRegExpr = new RegExp('\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*');
+    const emailRegExpr = new RegExp('[a-zA-Z0-9-]{1,}@([a-zA-Z\.])?[a-zA-Z]{1,}\.[a-zA-Z]{1,4}');
+    console.log(this.email);
     console.log(`Email: ${emailRegExpr.test(this.email)}`);
     return emailRegExpr.test(this.email);
   }

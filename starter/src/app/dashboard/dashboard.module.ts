@@ -14,6 +14,7 @@ import { DashboardRoutes } from './dashboard.routing';
 import { ListResourceComponent } from './list-resource/list-resource.component';
 import { DialogComponent } from './dialog/dialog.component';
 import { DialogNewResourceComponent } from './dialog-new-resource/dialog-new-resource.component';
+import { ListUserComponent } from './list-user/list-user.component';
 
 @NgModule({
   imports: [
@@ -34,7 +35,7 @@ import { DialogNewResourceComponent } from './dialog-new-resource/dialog-new-res
     MatInputModule
     
   ],
-  declarations: [ DashboardComponent, ListResourceComponent, DialogComponent, DialogNewResourceComponent ],
+  declarations: [ DashboardComponent, ListResourceComponent, DialogComponent, DialogNewResourceComponent, ListUserComponent ],
   entryComponents:[DialogComponent, DialogNewResourceComponent]
 })
 

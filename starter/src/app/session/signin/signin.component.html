@@ -24,7 +24,7 @@
               <div class="pb-1">
                 <mat-checkbox>Stay logged in</mat-checkbox>
               </div>
-              <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid" (click)="doLogin()">Login</button>
+              <button mat-raised-button color="primary" *ngIf="validateEmail()" type="submit" [disabled]="!form.valid" (click)="doLogin()">Login</button>
               <button disabled *ngIf="!validateEmail()" mat-raised-button color="primary" type="submit" >Login</button>
             </div>
             <div class="pt-1 pb-1 text-xs-center">

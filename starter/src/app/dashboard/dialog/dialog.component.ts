@@ -30,7 +30,6 @@ export class DialogComponent implements OnInit {
   categoria: CategoriaDto[];
   tipos: TipoDto[];
 
-
   constructor(private data: DataTransferService, private recService: RecursosService,
     private catService: CategoriasService, private tipService: TipoService,
     public dialogRef: MatDialogRef<DialogComponent>) {}
@@ -88,14 +87,8 @@ export class DialogComponent implements OnInit {
       console.log(error);
     });
   }
+  validateProduct(){
 
-  validatAnyo(): boolean {
-    // tslint:disable-next-line:max-line-length
-    const anyoRegExpr = new RegExp('/[^a-z ]\*([.0-9])*\d');
-    console.log(`Anyo: ${anyoRegExpr.test(String(this.anyo))}`);
-    return anyoRegExpr.test(String(this.anyo));
   }
-
-
   }
 

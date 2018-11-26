@@ -50,7 +50,6 @@ export class DialogNewResourceComponent implements OnInit {
 
   validateAnyo(): boolean {
     const anyoRegExpr = new RegExp('^[0-9]{0,}$');
-    console.log(this.anyo);
     console.log(`Anyo: ${anyoRegExpr.test(String(this.anyo))}`);
     return anyoRegExpr.test(String(this.anyo));
   }
