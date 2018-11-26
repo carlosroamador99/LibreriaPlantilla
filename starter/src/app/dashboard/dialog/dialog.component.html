@@ -1,5 +1,4 @@
 <div fxLayout="column" fFlexFill>
-
   <mat-form-field class="example-full-width">
     <input matInput placeholder="titulo del producto" [(ngModel)]="title">
   </mat-form-field><p>
@@ -30,8 +29,10 @@
           {{category.name}}
         </mat-option>
       </mat-select>
-    </mat-form-field><b>
+    </mat-form-field>
 
-  <button mat-raised-button color="primary" (click)="editResource()">Editar</button>
-  <button mat-raised-button color="warn" (click)="borrar()">Eliminar</button>
-
+  <div class="botones" fxLayoutAlign="center end">
+    <button mat-raised-button color="primary" (click)="editResource()">Editar</button>
+    <button mat-raised-button color="warn" (click)="borrar()">Eliminar</button>
+  </div>
+</div>
