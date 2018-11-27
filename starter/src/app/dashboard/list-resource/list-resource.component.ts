@@ -19,11 +19,11 @@ export class ListResourceComponent implements OnInit {
   selected = [];
 
   constructor(private recursoService:RecursosService, private titleService: Title, private dialog: MatDialog,
-     private data: DataTransferService) { }
+    private data: DataTransferService) { }
 
   ngOnInit() {
     this.getResources();
-    this.titleService.setTitle('Aportaciones');
+    this.titleService.setTitle('Recursos');
   }
 
   getResources(){
