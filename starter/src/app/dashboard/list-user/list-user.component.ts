@@ -4,6 +4,8 @@ import { Title } from '@angular/platform-browser';
 import { MatDialog } from '@angular/material';
 import { DataTransferService } from 'src/app/service/data-transfer.service';
 import { UserResponse } from 'src/app/interfaces/user-response.interface';
+import { DialogeditdeleteuserComponent } from '../dialogeditdeleteuser/dialogeditdeleteuser.component';
+import { DialogCreateUserComponent } from '../dialog-create-user/dialog-create-user.component';
 
 @Component({
   selector: 'app-list-user',
@@ -20,6 +22,7 @@ export class ListUserComponent implements OnInit {
     private data: DataTransferService) { }
 
   ngOnInit() {
+
     this.getUsers();
     this.titleService.setTitle('Usuarios');
   }
@@ -32,4 +35,27 @@ export class ListUserComponent implements OnInit {
     });
   }
 
+  openDialogNewUser() {
+    const dialogoNewProduct = this.dialog.open(DialogCreateUserComponent);
+
+    dialogoNewProduct.afterClosed().subscribe(result => {
+      this.getUsers();
+      console.log(result);
+    });
+
+  }
+
+  openDialogEditUser(id: number){
+    console.log(id);
+    this.data.changeId(String(id));
+    const dialogEdit = this.dialog.open(DialogeditdeleteuserComponent);
+    
+  dialogEdit.afterClosed().subscribe(result =>{
+    this.getUsers();
+    console.log(result);
+  });
+  }
+  onSelect({ selected }) {
+    this.openDialogEditUser(selected[0].id);
+}
 }

@@ -5,7 +5,6 @@ import { ErrorComponent } from './error/error.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { LockscreenComponent } from './lockscreen/lockscreen.component';
 import { SigninComponent } from './signin/signin.component';
-import { SignupComponent } from './signup/signup.component';
 
 export const SessionRoutes: Routes = [
   {
@@ -25,9 +24,6 @@ export const SessionRoutes: Routes = [
     }, {
       path: 'login',
       component: SigninComponent
-    }, {
-      path: 'signup',
-      component: SignupComponent
     }]
   }
 ];

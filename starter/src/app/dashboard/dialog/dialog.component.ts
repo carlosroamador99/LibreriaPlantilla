@@ -8,7 +8,6 @@ import { ResourceResponse } from 'src/app/interfaces/resource-response.interface
 import { TipoService } from 'src/app/service/tipo.service';
 import { CategoriasService } from 'src/app/service/categorias.service';
 import { ProductDto } from 'src/app/Dto/resource.dto';
-import { stringify } from '@angular/core/src/util';
 
 
 @Component({
