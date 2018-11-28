@@ -44,6 +44,7 @@ export class ListResourceComponent implements OnInit {
     console.log(result);
   });
   }
+  
   openDialogNewResource() {
     const dialogoNewProduct = this.dialog.open(DialogNewResourceComponent);
 

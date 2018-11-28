@@ -22,7 +22,7 @@ export class DialogeditdeleteuserComponent implements OnInit {
         public dialogRef: MatDialogRef<DialogeditdeleteuserComponent>) {}
 
   ngOnInit() {
-    this.data.currentId4EditUser.subscribe(message => this.id = Number(message));
+    this.data.currentId.subscribe(message => this.id = Number(message));
     
     this.getAllUsers();
   }
@@ -45,6 +45,7 @@ export class DialogeditdeleteuserComponent implements OnInit {
   editUser() {
     const dto = new UserDto(this.name, this.email, this.notes, String(this.phone), this.role);
     this.userService.editU(dto, this.id).subscribe(result => {
+      console.log(this.name,this.email, this.notes, this.phone, this.role);
       console.log(result);
       this.dialogRef.close();
     }, error => {
