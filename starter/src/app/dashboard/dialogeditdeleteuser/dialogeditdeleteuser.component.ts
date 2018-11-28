@@ -10,13 +10,15 @@ import { UserDto } from 'src/app/Dto/user.dto';
   styleUrls: ['./dialogeditdeleteuser.component.scss']
 })
 export class DialogeditdeleteuserComponent implements OnInit {
-
-  id: number;
-  name: string;
-  email: string;
-  notes: string;
-  phone: number;
-  role: string;
+    
+    //cambiado cosas
+    id: number;
+    name: string;
+    email: string;
+    password: string;
+    phone: string;
+    notes: string;
+    role: string;
 
   constructor(private data: DataTransferService, private userService: UserService,
         public dialogRef: MatDialogRef<DialogeditdeleteuserComponent>) {}
@@ -43,7 +45,7 @@ export class DialogeditdeleteuserComponent implements OnInit {
     });
   }
   editUser() {
-    const dto = new UserDto(this.name, this.email, this.notes, String(this.phone), this.role);
+    const dto = new UserDto(this.name, this.email, String(this.phone), this.password, this.notes);//password
     this.userService.editU(dto, this.id).subscribe(result => {
       console.log(this.name,this.email, this.notes, this.phone, this.role);
       console.log(result);

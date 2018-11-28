@@ -9,9 +9,6 @@ export class DataTransferService {
   private idSource = new BehaviorSubject('');
   currentId = this.idSource.asObservable();
 
-  private id4EditUser = new BehaviorSubject('id de recurso para editar');
-  currentId4EditUser = this.id4EditUser.asObservable();
-
   constructor() { }
 
   changeId(id: string) {

@@ -7,19 +7,23 @@
     <mat-form-field class="example-full-width">
       <input matInput placeholder="Email" [(ngModel)]="email">
     </mat-form-field><p>
+
+    <mat-form-field class="example-full-width">
+      <input disabled matInput placeholder="Contraseña" [(ngModel)]="password">
+    </mat-form-field><p>
       
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Teléfono" [(ngModel)]="phone">
-      </mat-form-field><p>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Teléfono" [(ngModel)]="phone">
+    </mat-form-field><p>
         
-      <mat-form-field class="example-full-width">
-        <textarea matInput placeholder="Notas" [(ngModel)]="notes"></textarea>
-      </mat-form-field><p>
+    <mat-form-field class="example-full-width">
+      <textarea matInput placeholder="Notas" [(ngModel)]="notes"></textarea>
+    </mat-form-field><p>
       
-      <mat-form-field class="example-full-width">
-        <input matInput placeholder="Role" [(ngModel)]="role">
-      </mat-form-field><p>
-        <div fxLayout="row" fxLayoutAlign="center center">
-          <button disabled *ngIf="!validateEmail()" mat-raised-button color="primary">Crear</button>
-          <button mat-raised-button color="primary" *ngIf="validateEmail()" (click)="createUser()">Crear</button>
-        </div>
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Role" [(ngModel)]="role">
+    </mat-form-field><p>
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <button disabled *ngIf="!validateEmail()" mat-raised-button color="primary">Crear</button>
+        <button mat-raised-button color="primary" *ngIf="validateEmail()" (click)="createUser()">Crear</button>
+      </div>
