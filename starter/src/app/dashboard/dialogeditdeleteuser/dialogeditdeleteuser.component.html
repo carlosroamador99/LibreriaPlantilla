@@ -1,0 +1,27 @@
+<div fxLayout="column" fxFlexFill>
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nombre" [(ngModel)]="name">
+  </mat-form-field><p>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="E-mail" [(ngModel)]="email">
+  </mat-form-field><p>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Notas" [(ngModel)]="notes">
+  </mat-form-field><p>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Teléfono" [(ngModel)]="phone">
+  </mat-form-field><p>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Role" [(ngModel)]="role">
+  </mat-form-field><p>
+  
+
+  <div class="botones" fxLayoutAlign="center end">
+    <button mat-raised-button color="primary" (click)="editUser()">Editar</button>
+    <button mat-raised-button color="warn" (click)="borrarUser()">Eliminar</button>
+  </div>
+</div>
