@@ -17,6 +17,10 @@ import { DialogNewResourceComponent } from './dialog-new-resource/dialog-new-res
 import { ListUserComponent } from './list-user/list-user.component';
 import { DialogeditdeleteuserComponent } from './dialogeditdeleteuser/dialogeditdeleteuser.component';
 import { DialogCreateUserComponent } from './dialog-create-user/dialog-create-user.component';
+import { ListFilmComponent } from './list-film/list-film.component';
+import { ListBookComponent } from './list-book/list-book.component';
+import { ListMagazineComponent } from './list-magazine/list-magazine.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
@@ -37,7 +41,7 @@ import { DialogCreateUserComponent } from './dialog-create-user/dialog-create-us
     MatInputModule
     
   ],
-  declarations: [ DashboardComponent, ListResourceComponent, DialogComponent, DialogNewResourceComponent, ListUserComponent,  DialogeditdeleteuserComponent, DialogCreateUserComponent ],
+  declarations: [ DashboardComponent, ListResourceComponent, DialogComponent, DialogNewResourceComponent, ListUserComponent,  DialogeditdeleteuserComponent, DialogCreateUserComponent, ListFilmComponent, ListBookComponent, ListMagazineComponent, ProfileComponent ],
   entryComponents:[DialogComponent, DialogNewResourceComponent, DialogeditdeleteuserComponent, DialogCreateUserComponent]
 })
 

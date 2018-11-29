@@ -11,6 +11,7 @@ import { ErrorComponent } from './error/error.component';
 import { ForgotComponent } from './forgot/forgot.component';
 import { LockscreenComponent } from './lockscreen/lockscreen.component';
 import { SigninComponent } from './signin/signin.component';
+import { CambiarpassComponent } from './cambiarpass/cambiarpass.component';
 
 @NgModule({
   imports: [
@@ -31,6 +32,7 @@ import { SigninComponent } from './signin/signin.component';
     ForgotComponent,
     LockscreenComponent,
     SigninComponent,
+    CambiarpassComponent,
     
   ]
 })

@@ -1,0 +1,30 @@
+<div class="session mat-indigo">
+  <div class="session-content">
+    <div class="session-wrapper">
+      <mat-card>
+        <mat-card-content>
+          <form >
+            <div class="text-xs-center pb-1">
+              <img src="assets/images/logo-dark.svg" alt=""/>
+              <p class="mat-text-muted">Introduzca su nueva contraseña</p>
+            </div>
+            <div  fxLayout="column"  fxLayoutAlign="space-around">
+              <div class="pb-1">
+                  <mat-form-field style="width: 100%">
+                      <input matInput placeholder="Antigua contraseña" type="password" [(ngModel)]="oldpassword" name="oldpassword">
+                    </mat-form-field>
+                <mat-form-field style="width: 100%">
+                  <input matInput placeholder="Nueva contraseña" type="password" [(ngModel)]="password" name="password">
+                </mat-form-field>
+                <mat-form-field style="width: 100%">
+                  <input matInput placeholder="Confirmar contraseña" type="password" [(ngModel)]="confirmpassword" name="confirmpassword">
+                </mat-form-field>
+              </div>
+              <button mat-raised-button color="primary" type="submit" [disabled]="!comprobarPassword()" (click)="onSubmit()">Cambiar contraseña</button>
+            </div>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

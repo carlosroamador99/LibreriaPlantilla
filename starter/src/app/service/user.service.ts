@@ -5,6 +5,7 @@ import { Observable } from 'rxjs';
 import { UserResponse } from '../interfaces/user-response.interface';
 import { HttpHeaders, HttpClient } from '@angular/common/http';
 import { UserDto } from '../Dto/user.dto';
+import { PassDto } from '../Dto/pass.dto';
 
 const userUrl = `${environment.apiUrl}/user`;
 
@@ -58,5 +59,19 @@ export class UserService {
     };
 
     return this.http.delete(`${userUrl}/${id}`, requestOptions);
+  }
+
+  changePass(oldP:string, newP:string) {
+    const dto = new PassDto(oldP, newP);
+
+    const requestOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${this.authService.getToken()}`,
+        'Access-Control-Allow-Origin': '*'
+      })
+    };
+
+    return this.http.put(`${userUrl}/updatepassword`,dto , requestOptions);
   }
 }

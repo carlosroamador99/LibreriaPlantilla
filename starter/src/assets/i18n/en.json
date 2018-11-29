@@ -1,5 +1,11 @@
 {
   "HOME": "Home",
+  "LIST": "Resources list",
+  "ALLLIST": "All resources",
+  "FILMLIST": "Films",
+  "BOOKLIST": "Books",
+  "MAGAZINELIST": "Magazines",
+  "USERLIST": "User list",
 
   "APPS": "Apps",
   "CALENDAR": "Calendar",

@@ -22,16 +22,29 @@ export interface Menu {
 
 const MENUITEMS = [
   {
-    state: '/',
+    state: 'dashboard',
     name: 'HOME',
     type: 'link',
     icon: 'explore'
-  },
-  {
-    state: 'http://primer.nyasha.me/docs',
-    name: 'DOCS',
-    type: 'extTabLink',
-    icon: 'local_library'
+  },{
+    state: 'dashboard',
+    name: 'LIST',
+    type: 'sub',
+    icon: 'format_line_spacing',
+    children: [
+      {state: 'list-resource', name: 'ALLLIST',type: 'link'},
+      {state: 'list-film', name: 'FILMLIST',type: 'link'},
+      {state: 'list-book', name: 'BOOKLIST',type: 'link'},
+      {state: 'list-magazine', name: 'MAGAZINELIST',type: 'link'}
+    ]
+  },{
+    state: 'dashboard',
+    name: 'USER',
+    type: 'sub',
+    icon: 'face',
+    children: [
+      {state: 'list-user', name: 'USERLIST',type: 'link'}
+    ]
   }
 ];
 

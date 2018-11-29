@@ -1,5 +1,11 @@
 {
-  "HOME": "Tableau de bord",
+  "HOME": "Panel de control",
+  "LIST": "Lista de recursos",
+  "ALLLIST": "Todos los recursos",
+  "FILMLIST": "Peliculas",
+  "BOOKLIST": "Libros",
+  "MAGAZINELIST": "Revistas",
+  "USERLIST": "Lista de usuarios",
 
   "APPS": "Apps",
   "CALENDAR": "Calendrier",

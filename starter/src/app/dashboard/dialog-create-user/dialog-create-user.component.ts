@@ -13,19 +13,19 @@ export class DialogCreateUserComponent implements OnInit {
   id: number;
   name: string;
   email: string;
-  password: string;
+  password =  Math.random().toString(36).slice(-8);
   phone: string;
   notes: string;
-  role: string;
+  
   constructor(private userService: UserService, public dialogRef: MatDialogRef<DialogCreateUserComponent>) { }
 
   ngOnInit() {
   }
 
   createUser() {
-    this.password = Math.random().toString(36).slice(-8);
+    //this.password = Math.random().toString(36).slice(-8);
     console.log(this.password);
-    const dto = new  UserDto(this.name, this.email, this.notes, String(this.phone), this.role);
+    const dto = new  UserDto(this.name, this.email,this.password, String(this.phone), this.notes);
 
     this.userService.newU(dto).subscribe(result => {
       this.dialogRef.close();
