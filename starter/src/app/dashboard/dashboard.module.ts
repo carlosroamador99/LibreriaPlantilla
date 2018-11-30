@@ -21,6 +21,7 @@ import { ListFilmComponent } from './list-film/list-film.component';
 import { ListBookComponent } from './list-book/list-book.component';
 import { ListMagazineComponent } from './list-magazine/list-magazine.component';
 import { ProfileComponent } from './profile/profile.component';
+import { ListCategoryComponent } from './list-category/list-category.component';
 
 @NgModule({
   imports: [
@@ -41,7 +42,7 @@ import { ProfileComponent } from './profile/profile.component';
     MatInputModule
     
   ],
-  declarations: [ DashboardComponent, ListResourceComponent, DialogComponent, DialogNewResourceComponent, ListUserComponent,  DialogeditdeleteuserComponent, DialogCreateUserComponent, ListFilmComponent, ListBookComponent, ListMagazineComponent, ProfileComponent ],
+  declarations: [ DashboardComponent, ListResourceComponent, DialogComponent, DialogNewResourceComponent, ListUserComponent,  DialogeditdeleteuserComponent, DialogCreateUserComponent, ListFilmComponent, ListBookComponent, ListMagazineComponent, ProfileComponent, ListCategoryComponent ],
   entryComponents:[DialogComponent, DialogNewResourceComponent, DialogeditdeleteuserComponent, DialogCreateUserComponent]
 })
 

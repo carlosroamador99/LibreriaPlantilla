@@ -14,7 +14,7 @@ export class CategoriasService {
   constructor(private authService: AuthService,
     private http: HttpClient) { }
 
-getAll(): Observable<CategoriaDto[]> {
+getAllCategory(): Observable<CategoriaDto[]> {
 const requestOptions = {
 headers: new HttpHeaders({
 'Content-Type': 'application/json',

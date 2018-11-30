@@ -7,6 +7,7 @@ import { ListFilmComponent } from './list-film/list-film.component';
 import { ListBookComponent } from './list-book/list-book.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ListMagazineComponent } from './list-magazine/list-magazine.component';
+import { ListCategoryComponent } from './list-category/list-category.component';
 
 export const DashboardRoutes: Routes = [{
   path: '',
@@ -31,5 +32,8 @@ export const DashboardRoutes: Routes = [{
 }, {
   path: 'list-magazine',
   component:ListMagazineComponent
-},]
+}, {
+  path: 'list-category',
+  component:ListCategoryComponent
+}]
 }];

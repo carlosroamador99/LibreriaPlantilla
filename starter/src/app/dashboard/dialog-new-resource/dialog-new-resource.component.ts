@@ -26,7 +26,7 @@ export class DialogNewResourceComponent implements OnInit {
     private prodService: RecursosService, public dialogRef: MatDialogRef<DialogNewResourceComponent>) { }
 
   ngOnInit() {
-    this.catService.getAll().subscribe(result => {
+    this.catService.getAllCategory().subscribe(result => {
       this.categoria = result;
     }, error => {
       console.log(error);

@@ -36,7 +36,7 @@ export class DialogComponent implements OnInit {
   ngOnInit() {
     this.data.currentId.subscribe(message => this.id = Number(message));
 
-    this.catService.getAll().subscribe(result => {
+    this.catService.getAllCategory().subscribe(result => {
       this.categoria = result;
     }, error => {
       console.log(error);
