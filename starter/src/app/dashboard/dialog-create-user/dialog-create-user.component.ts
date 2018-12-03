@@ -13,7 +13,7 @@ export class DialogCreateUserComponent implements OnInit {
   id: number;
   name: string;
   email: string;
-  password =  Math.random().toString(36).slice(-8);
+  password: string; // Math.random().toString(36).slice(-8);
   phone: string;
   notes: string;
   

@@ -25,10 +25,11 @@ export class CambiarpassComponent implements OnInit {
     }
   }
 
-  onSubmit() {
+  cambiarPassword() {
+    console.log(this.oldpassword, this.password);
     this.passService.changePass(this.oldpassword, this.password).subscribe(result => {
       console.log(result);
-      this.router.navigate(['/'])
+      this.router.navigate(['/dashboard'])
     }, error => {
       console.log(error);
     });

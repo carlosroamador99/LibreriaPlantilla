@@ -63,7 +63,6 @@ export class UserService {
 
   changePass(oldP:string, newP:string) {
     const dto = new PassDto(oldP, newP);
-
     const requestOptions = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -72,6 +71,6 @@ export class UserService {
       })
     };
 
-    return this.http.put(`${userUrl}/updatepassword`,dto , requestOptions);
+    return this.http.put(`${userUrl}/change/password`,dto , requestOptions);
   }
 }

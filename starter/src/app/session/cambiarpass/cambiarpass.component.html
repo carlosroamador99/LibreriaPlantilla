@@ -11,7 +11,7 @@
             <div  fxLayout="column"  fxLayoutAlign="space-around">
               <div class="pb-1">
                   <mat-form-field style="width: 100%">
-                      <input matInput placeholder="Antigua contraseña" type="password" [(ngModel)]="oldpassword" name="oldpassword">
+                      <input matInput placeholder="Antigua contraseña" type="text" [(ngModel)]="oldpassword" name="oldpassword">
                     </mat-form-field>
                 <mat-form-field style="width: 100%">
                   <input matInput placeholder="Nueva contraseña" type="password" [(ngModel)]="password" name="password">
@@ -20,7 +20,8 @@
                   <input matInput placeholder="Confirmar contraseña" type="password" [(ngModel)]="confirmpassword" name="confirmpassword">
                 </mat-form-field>
               </div>
-              <button mat-raised-button color="primary" type="submit" [disabled]="!comprobarPassword()" (click)="onSubmit()">Cambiar contraseña</button>
+              <button disabled *ngIf="!comprobarPassword()" mat-raised-button color="primary" type="submit">Cambiar contraseña</button>
+              <button *ngIf="comprobarPassword()" mat-raised-button color="primary" type="submit" (click)="cambiarPassword()">Cambiar contraseña</button>
             </div>
           </form>
         </mat-card-content>
