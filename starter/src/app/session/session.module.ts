@@ -12,6 +12,7 @@ import { ForgotComponent } from './forgot/forgot.component';
 import { LockscreenComponent } from './lockscreen/lockscreen.component';
 import { SigninComponent } from './signin/signin.component';
 import { CambiarpassComponent } from './cambiarpass/cambiarpass.component';
+import { UpdateuserComponent } from './updateuser/updateuser.component';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import { CambiarpassComponent } from './cambiarpass/cambiarpass.component';
     LockscreenComponent,
     SigninComponent,
     CambiarpassComponent,
+    UpdateuserComponent,
     
   ]
 })

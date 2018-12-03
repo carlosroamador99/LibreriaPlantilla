@@ -62,7 +62,8 @@ export class DialogeditdeleteuserComponent implements OnInit {
       console.log(error);
     });
   }
-  validateProduct(){
 
+  updateUser(){
+    
   }
 }

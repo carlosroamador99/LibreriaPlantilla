@@ -1,10 +1,10 @@
 export class PassDto {
-    oldpassword: string;
-    newpass: string;
+    password: string;
+    newpassword: string;
   
     constructor(oldp: string, np: string) {
-        this.oldpassword = oldp;
-        this.newpass = np;
+        this.password = oldp;
+        this.newpassword = np;
   
     }
   }

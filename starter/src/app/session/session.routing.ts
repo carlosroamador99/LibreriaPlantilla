@@ -6,6 +6,7 @@ import { ForgotComponent } from './forgot/forgot.component';
 import { LockscreenComponent } from './lockscreen/lockscreen.component';
 import { SigninComponent } from './signin/signin.component';
 import { CambiarpassComponent } from './cambiarpass/cambiarpass.component';
+import { UpdateuserComponent } from './updateuser/updateuser.component';
 
 export const SessionRoutes: Routes = [
   {
@@ -31,6 +32,9 @@ export const SessionRoutes: Routes = [
     }, {
       path: 'changepass',
       component: CambiarpassComponent
+    }, {
+      path: 'updateuser',
+      component: UpdateuserComponent
     }]
   }
 ];

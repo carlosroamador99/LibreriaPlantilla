@@ -62,6 +62,7 @@ export class UserService {
   }
 
   changePass(oldP:string, newP:string) {
+    console.log(this.authService.getToken());
     const dto = new PassDto(oldP, newP);
     const requestOptions = {
       headers: new HttpHeaders({
@@ -72,5 +73,15 @@ export class UserService {
     };
 
     return this.http.put(`${userUrl}/change/password`,dto , requestOptions);
+  }
+
+  actualizarUser(dto:string) {
+    const requestOptions = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${this.authService.getToken()}`
+      })
+    };
+    return this.http.put(`${userUrl}/update/profile`, dto, requestOptions);
   }
 }

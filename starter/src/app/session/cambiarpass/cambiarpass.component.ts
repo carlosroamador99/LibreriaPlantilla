@@ -26,7 +26,6 @@ export class CambiarpassComponent implements OnInit {
   }
 
   cambiarPassword() {
-    console.log(this.oldpassword, this.password);
     this.passService.changePass(this.oldpassword, this.password).subscribe(result => {
       console.log(result);
       this.router.navigate(['/dashboard'])

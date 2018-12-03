@@ -22,4 +22,8 @@ export class ProfileComponent implements OnInit {
   changePass() {
     this.router.navigate(['/session/changepass']);
   }
+
+  updateUser() {
+    this.router.navigate(['/session/updateuser']);
+  }
 }
